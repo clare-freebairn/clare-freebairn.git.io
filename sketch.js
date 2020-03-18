@@ -14,23 +14,27 @@ let cat7_shortAndBoring = false;
 
 let showButton = true;
 
-function setup() {
-  window.open("https://talktotransformer.com/");
+function setup() {setTimeout(function() { window.focus() },500);
+  
+  
   createCanvas(windowWidth, windowHeight);
 
   noStroke();
   
 }
 
+
+
 function submitButton() {
   if (showButton === true) {
     inp = createInput(["enter text from transformer"], ["text"]);
-    inp.position(20, 20);
+    inp.position(10, 10);
 
     button = createButton("submit");
     button.position(inp.x + inp.width, inp.y);
     button.mousePressed(tokeniseInputString);
   }
+  
 }
 
 function analyseText(strArr) {
@@ -133,7 +137,7 @@ function categorySet() {
   }
 
   if (cat6_RomanticPoetic === true) {
-    setWidth = random(20, 21);
+    setWidth = 15
     fill(random(coloursSweet));
   }
 
@@ -163,8 +167,16 @@ function draw() {
     submitButton();
     createInput();
   }
-  
+  strokeWeight(65);
+  stroke(0);
+  noFill();
+  rect(0, 0, width, height);
+  noStroke();
   noLoop();
+}
+
+function border() {
+  
 }
 
 function generate(strArr) {
@@ -174,6 +186,10 @@ function generate(strArr) {
     for (let i = 0; i < windowWidth; i = i + setWidth) {
       categorySet();
       rect(i, h, setWidth, setWidth);
+      stroke(0);
+      noFill();
+      rect(0, 0, width, height);
+      noStroke();
     }
 
   }
