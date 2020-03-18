@@ -20,8 +20,11 @@ function setup() {setTimeout(function() { window.focus() },500);
   createCanvas(windowWidth, windowHeight);
 
   noStroke();
-  
+  submitButton();
+    
+    createInput();
 }
+
 
 
 
@@ -86,7 +89,8 @@ function analyseText(strArr) {
       strArr[i].indexOf("contact") || strArr[i].indexOf("product") || strArr[i].indexOf("advertising") || strArr[i].indexOf("phone") || 
       strArr[i].indexOf("smartphone") || strArr[i].indexOf("email") || strArr[i].indexOf("user") || strArr[i].indexOf("Javascript") ||
       strArr[i].indexOf("java") || strArr[i].indexOf("Java") || strArr[i].indexOf("C++") || strArr[i].indexOf("computer") || 
-      strArr[i].indexOf("system")!= -1 ) {
+      strArr[i].indexOf("system") || strArr[i].indexOf("click" || strArr[i].indexOf("subcribe") || strArr[i].indexOf("SUBSCRIBE") ||
+      strArr[i].indexOf("youtube"))!= -1 ) {
         cat5_digitalTechModern = true;
       }
     }
@@ -162,17 +166,43 @@ function tokeniseInputString() {
   generate(wordsArr);
 }
 
-function draw() {
-  if(showButton === true){
-    submitButton();
-    createInput();
+function transformerButton(){
+  fill(200);
+
+  var a = mouseX > 300 && mouseX < 470;
+  var b = mouseY > 0 && mouseY < 40
+  if(a && b){
+    fill(coloursSexy[5]);
   }
+  rect(300, 10, 170, 20);
+  fill(0);
+  text("click here to talk to tranformer", 305, 25);
+}
+
+ function mousePressed() {
+  var a = mouseX > 300 && mouseX < 470;
+  var b = mouseY > 0 && mouseY < 40;
+
+  if(a && b){
+    window.open("https://talktotransformer.com/");
+  } 
+
+
+ }
+
+function draw() {
+  
+    
+  
   strokeWeight(65);
   stroke(0);
   noFill();
   rect(0, 0, width, height);
   noStroke();
-  noLoop();
+  transformerButton();
+  
+  
+  
 }
 
 function border() {
