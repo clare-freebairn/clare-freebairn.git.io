@@ -12,206 +12,100 @@ let cat5_digitalTechModern = false;
 let cat6_RomanticPoetic = false;
 let cat7_shortAndBoring = false;
 
+let showButton = true;
+
 function setup() {
+  window.open("https://talktotransformer.com/");
   createCanvas(windowWidth, windowHeight);
 
   noStroke();
-  submitButton();
+  
 }
 
 function submitButton() {
-  inp = createInput(["enter text from transformer"], ["text"]);
-  inp.position(windowWidth / 2 - inp.width / 2, windowHeight / 2);
+  if (showButton === true) {
+    inp = createInput(["enter text from transformer"], ["text"]);
+    inp.position(20, 20);
 
-  button = createButton("submit");
-  button.position(inp.x + inp.width, windowHeight / 2);
-  // button.mousePressed(generate);
-  button.mousePressed(tokeniseInputString);
+    button = createButton("submit");
+    button.position(inp.x + inp.width, inp.y);
+    button.mousePressed(tokeniseInputString);
+  }
 }
 
 function analyseText(strArr) {
   console.log(strArr);
 
-  if (
-    strArr.length <= 50 &&
-    cat5_digitalTechModern == false &&
-    cat3_natureDescriptive === false
-  ) {
+  if (strArr.length <= 50 && cat5_digitalTechModern == false && cat3_natureDescriptive === false) {
     for (i = 0; i < strArr.length; i++) {
-      if (
-        strArr[i].indexOf(
-          "love" ||
-            "Love" ||
-            "wisdom" ||
-            "wise" ||
-            "dreams" ||
-            "Sleeping" ||
-            "Death" ||
-            "King" ||
-            "Sleep" ||
-            "dark" ||
-            "beautful" ||
-            "Deep" ||
-            "happy" ||
-            "tears" ||
-            "Marriage" ||
-            "Sing" ||
-            "sing" ||
-            "song" ||
-            "Songs"
-        ) != -1
-      ) {
+      if (strArr[i].indexOf("love") || strArr[i].indexOf("Love") || strArr[i].indexOf("wisdom") || strArr[i].indexOf("wise") || 
+      strArr[i].indexOf("Wise") || strArr[i].indexOf("dream") || strArr[i].indexOf("Sleeping") || strArr[i].indexOf("Death") || 
+      strArr[i].indexOf("death") || strArr[i].indexOf("King") || strArr[i].indexOf("Queen") || strArr[i].indexOf("dark") || 
+      strArr[i].indexOf("beautiful") || strArr[i].indexOf("Deep") || strArr[i].indexOf("happy") || strArr[i].indexOf("tears") ||
+      strArr[i].indexOf("Sing") || strArr[i].indexOf("sing") || strArr[i].indexOf("Sing") || strArr[i].indexOf("song") || 
+      strArr[i].indexOf("Song")!= -1 ) {
         cat1_shortSweet = true;
       }
     }
   }
 
-  if (
-    cat5_digitalTechModern == false &&
-    cat3_natureDescriptive === false &&
-    cat1_shortSweet == false
-  ) {
+  if (cat5_digitalTechModern == false && cat3_natureDescriptive === false && cat1_shortSweet == false) {
     for (i = 0; i < strArr.length; i++) {
-      if (
-        strArr[i].indexOf(
-          "love" ||
-            "Love" ||
-            "wisdom" ||
-            "wise" ||
-            "dreams" ||
-            "Sleeping" ||
-            "Death" ||
-            "King" ||
-            "Sleep" ||
-            "dark" ||
-            "beautful" ||
-            "Deep" ||
-            "happy" ||
-            "tears" ||
-            "Marriage" ||
-            "Sing" ||
-            "sing" ||
-            "song" ||
-            "Songs"
-        ) != -1
-      ) {
+      if (strArr[i].indexOf("love") || strArr[i].indexOf("Love") || strArr[i].indexOf("wisdom") || strArr[i].indexOf("wise") || 
+      strArr[i].indexOf("Wise") || strArr[i].indexOf("dream") || strArr[i].indexOf("Sleeping") || strArr[i].indexOf("Death") || 
+      strArr[i].indexOf("death") || strArr[i].indexOf("King") || strArr[i].indexOf("Queen") || strArr[i].indexOf("dark") || 
+      strArr[i].indexOf("beautiful") || strArr[i].indexOf("Deep") || strArr[i].indexOf("happy") || strArr[i].indexOf("tears") ||
+      strArr[i].indexOf("Sing") || strArr[i].indexOf("sing") || strArr[i].indexOf("Sing") || strArr[i].indexOf("song") || 
+      strArr[i].indexOf("Song")!= -1 ) {
         cat6_RomanticPoetic = true;
       }
     }
   }
 
-  if (
-    cat6_RomanticPoetic === false &&
-    cat5_digitalTechModern == false &&
-    cat1_shortSweet == false &&
-    cat4_loveSexAndEmotion == false &&
-    cat2_bland === false &&
-    cat7_shortAndBoring == false
-  ) {
+  if (cat6_RomanticPoetic === false && cat5_digitalTechModern == false && cat1_shortSweet == false && cat4_loveSexAndEmotion == false && cat2_bland === false && cat7_shortAndBoring == false ) {
     for (i = 0; i < strArr.length; i++) {
-      if (
-        strArr[i].indexOf(
-          "tree" ||
-            "grass" ||
-            "flower" ||
-            "breez" ||
-            "greene" ||
-            "environment" ||
-            "ecolog" ||
-            "natural" ||
-            "landscape" ||
-            "cave" ||
-            "ocean" ||
-            "lake"
-        ) != -1
-      ) {
+      if (strArr[i].indexOf("tree") || strArr[i].indexOf("grass") || strArr[i].indexOf("flower") || strArr[i].indexOf("breeze") || 
+      strArr[i].indexOf("green") || strArr[i].indexOf("environment") || strArr[i].indexOf("ecology") || strArr[i].indexOf("grow") || 
+      strArr[i].indexOf("natural") || strArr[i].indexOf("landscape") || strArr[i].indexOf("cave") || strArr[i].indexOf("ocean") || 
+      strArr[i].indexOf("lake") || strArr[i].indexOf("sea") || strArr[i].indexOf("growing") || strArr[i].indexOf("soil") ||
+      strArr[i].indexOf("dirt") || strArr[i].indexOf("petal") || strArr[i].indexOf("leaf") || strArr[i].indexOf("autumn") || 
+      strArr[i].indexOf("winter")!= -1 ) {
         cat3_natureDescriptive = true;
       }
     }
   }
 
-  if (
-    strArr.length >= 50 &&
-    cat6_RomanticPoetic === false &&
-    cat3_natureDescriptive === false
-  ) {
+  if (strArr.length >= 50 && cat6_RomanticPoetic === false && cat3_natureDescriptive === false ) {
     for (i = 0; i < strArr.length; i++) {
-      if (
-        strArr[i].indexOf(
-          "https" ||
-            ".com" ||
-            "domain" ||
-            "tech" ||
-            "game" ||
-            "write" ||
-            "knowledge" ||
-            "feedback" ||
-            "information" ||
-            "contact" ||
-            "product" ||
-            "advertising" ||
-            "smartphone" ||
-            "phone" ||
-            "email" ||
-            "user" ||
-            "Javascript"
-        ) != -1
-      ) {
+      if (strArr[i].indexOf("https") || strArr[i].indexOf(".com") || strArr[i].indexOf("domain") || strArr[i].indexOf("tech") || 
+      strArr[i].indexOf("game") || strArr[i].indexOf("knowledge") || strArr[i].indexOf("feedback") || strArr[i].indexOf("information") || 
+      strArr[i].indexOf("contact") || strArr[i].indexOf("product") || strArr[i].indexOf("advertising") || strArr[i].indexOf("phone") || 
+      strArr[i].indexOf("smartphone") || strArr[i].indexOf("email") || strArr[i].indexOf("user") || strArr[i].indexOf("Javascript") ||
+      strArr[i].indexOf("java") || strArr[i].indexOf("Java") || strArr[i].indexOf("C++") || strArr[i].indexOf("computer") || 
+      strArr[i].indexOf("system")!= -1 ) {
         cat5_digitalTechModern = true;
       }
     }
   }
 
-  if (
-    strArr.length >= 50 &&
-    cat6_RomanticPoetic === false &&
-    cat5_digitalTechModern == false
-  ) {
+  if ( strArr.length >= 50 && cat6_RomanticPoetic === false && cat5_digitalTechModern == false) {
     for (i = 0; i < strArr.length; i++) {
-      if (
-        strArr[i].indexOf(
-          "love" ||
-            "happy" ||
-            "happiness" ||
-            "sex" ||
-            "penis" ||
-            "vagina" ||
-            "bulge" ||
-            "boyfriend" ||
-            "girlfriend" ||
-            "intense" ||
-            "eyes" ||
-            "breasts" ||
-            "chest" ||
-            "breath"
-        ) != -1
-      ) {
+      if (strArr[i].indexOf("love") || strArr[i].indexOf("Love") || strArr[i].indexOf("sex") || strArr[i].indexOf("porn") || 
+      strArr[i].indexOf("nsfw") || strArr[i].indexOf("penis") || strArr[i].indexOf("vagina") || strArr[i].indexOf("breasts") || 
+      strArr[i].indexOf("attractive") || strArr[i].indexOf("handsome") || strArr[i].indexOf("flirt") || strArr[i].indexOf("boyfriend") || 
+      strArr[i].indexOf("girlfriend") || strArr[i].indexOf("wife") || strArr[i].indexOf("husband") || strArr[i].indexOf("eyes") ||
+      strArr[i].indexOf("thrust") || strArr[i].indexOf("moan") || strArr[i].indexOf("groan") || strArr[i].indexOf("hot") || 
+      strArr[i].indexOf("sexy")!= -1 ) {
         cat4_loveSexAndEmotion = true;
       }
     }
   }
 
-  if (
-    strArr.length <= 50 &&
-    cat1_shortSweet === false &&
-    cat6_RomanticPoetic === false &&
-    cat5_digitalTechModern == false &&
-    cat1_shortSweet == false &&
-    cat4_loveSexAndEmotion == false &&
-    cat2_bland === false
-  ) {
+  if ( strArr.length <= 50 && cat1_shortSweet === false && cat6_RomanticPoetic === false && cat5_digitalTechModern == false && cat1_shortSweet == false && cat4_loveSexAndEmotion == false && cat2_bland === false ) {
     cat7_shortAndBoring = true;
   }
 
-  if (
-    strArr.length >= 50 &&
-    cat1_shortSweet === false &&
-    cat3_natureDescriptive === false &&
-    cat4_loveSexAndEmotion === false &&
-    cat5_digitalTechModern === false &&
-    cat6_RomanticPoetic === false &&
-    cat7_shortAndBoring == false
-  ) {
+  if ( strArr.length >= 50 && cat1_shortSweet === false && cat3_natureDescriptive === false && cat4_loveSexAndEmotion === false && cat5_digitalTechModern === false && cat6_RomanticPoetic === false && cat7_shortAndBoring == false ) {
     cat2_bland = true;
   }
 }
@@ -265,18 +159,25 @@ function tokeniseInputString() {
 }
 
 function draw() {
-  createInput();
+  if(showButton === true){
+    submitButton();
+    createInput();
+  }
+  
   noLoop();
 }
 
 function generate(strArr) {
   analyseText(strArr);
+  showButton = false;
   for (h = 0; h < windowHeight; h = h + setWidth) {
     for (let i = 0; i < windowWidth; i = i + setWidth) {
       categorySet();
       rect(i, h, setWidth, setWidth);
     }
+
   }
+  
 }
 let coloursTech = [
   "#1C2541",

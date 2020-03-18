@@ -19,7 +19,7 @@ Sing along with me
 
 Sing along with me,
 
-love along with me
+Sing along with me
 
 //cat2 -
 
@@ -62,7 +62,7 @@ Tell me something!
 I'm kidding.
 
 
-You said, "I'd love to be your boyfriend."
+You said, "I will be your boyfriend."
 
 
 Can you be my boyfriend?
