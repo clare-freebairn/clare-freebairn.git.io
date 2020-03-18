@@ -187,26 +187,46 @@ function transformerButton(){
     window.open("https://talktotransformer.com/");
   } 
 
+  var c = mouseX > 500 && mouseX < 540;
+  var d = mouseY > 0 && mouseY < 40;
+
+  if(c && d){
+    cat1_shortSweet = false;
+    cat2_bland = false;
+    cat3_natureDescriptive = false;
+    cat4_loveSexAndEmotion = false;
+    cat5_digitalTechModern = false;
+    cat6_RomanticPoetic = false;
+    cat7_shortAndBoring = false;
+  fill(255);
+  rect(0, 0, windowWidth, windowHeight);
+  }
 
  }
 
 function draw() {
-  
-    
-  
   strokeWeight(65);
   stroke(0);
   noFill();
   rect(0, 0, width, height);
   noStroke();
   transformerButton();
-  
+  resetButton();
   
   
 }
 
-function border() {
-  
+function resetButton() {
+  fill(200);
+
+  var a = mouseX > 500 && mouseX < 540;
+  var b = mouseY > 0 && mouseY < 40;
+  if(a && b){
+    fill(coloursSexy[5]);
+  }
+  rect(500, 10, 40, 20);
+  fill(0);
+  text("reset", 505, 25);
 }
 
 function generate(strArr) {
